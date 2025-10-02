@@ -1,3 +1,6 @@
+<script>
+  import SidebarProfiles from './SidebarProfiles.svelte';
+</script>
 <script lang="ts">
 	import { toast } from 'svelte-sonner';
 	import { v4 as uuidv4 } from 'uuid';
@@ -727,6 +730,8 @@
 						{$WEBUI_NAME}
 					</div>
 				</a>
+				<!-- SidebarProfiles: List of profiles below app name/logo -->
+				<SidebarProfiles />
 				<Tooltip
 					content={$showSidebar ? $i18n.t('Close Sidebar') : $i18n.t('Open Sidebar')}
 					placement="bottom"
@@ -781,7 +786,10 @@
 								<div class=" self-center text-sm font-primary">{$i18n.t('New Chat')}</div>
 							</div>
 						</a>
+<div style="color: red; font-weight: bold;">TEST123</div>
 					</div>
+					<!-- SidebarProfiles: List of profiles below quick action buttons -->
+					<SidebarProfiles />
 
 					<div class="px-[7px] flex justify-center text-gray-800 dark:text-gray-200">
 						<button
@@ -1211,3 +1219,16 @@
 		</div>
 	</div>
 {/if}
+
+<!-- Sidebar link to System Prompt Profiles in chat settings -->
+<a
+  id="sidebar-profiles-button"
+  class="grow flex items-center space-x-3 rounded-2xl px-2.5 py-2 hover:bg-gray-100 dark:hover:bg-gray-900 transition outline-none"
+  href="/settings/general"
+  style="margin: 8px 0;"
+>
+  <svg xmlns="http://www.w3.org/2000/svg" class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 15c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+  </svg>
+  <span>Profiles</span>
+</a>

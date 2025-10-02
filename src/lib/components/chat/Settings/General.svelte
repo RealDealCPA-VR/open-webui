@@ -8,6 +8,7 @@
 
 	const i18n = getContext('i18n');
 
+import SystemPromptProfiles from './SystemPromptProfiles.svelte';
 	import AdvancedParams from './Advanced/AdvancedParams.svelte';
 	import Textarea from '$lib/components/common/Textarea.svelte';
 	export let saveSettings: Function;
@@ -20,6 +21,7 @@
 	let languages: Awaited<ReturnType<typeof getLanguages>> = [];
 	let lang = $i18n.language;
 	let notificationEnabled = false;
+$: system = $settings.system ?? '';
 	let system = '';
 
 	let showAdvanced = false;
@@ -189,6 +191,8 @@
 		applyTheme(_theme);
 	};
 </script>
+<!-- System Prompt Profiles Management -->
+<SystemPromptProfiles />
 
 <div class="flex flex-col h-full justify-between text-sm" id="tab-general">
 	<div class="  overflow-y-scroll max-h-[28rem] md:max-h-full">

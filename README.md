@@ -268,3 +268,30 @@ If you have any questions, suggestions, or need assistance, please open an issue
 ---
 
 Created by [Timothy Jaeryang Baek](https://github.com/tjbck) - Let's make Open WebUI even more amazing together! 💪 5
+
+## System Prompt & Model Profiles
+
+You can now create, save, and switch between multiple "profiles" for your system prompt and model selection. Each profile contains:
+- A unique name
+- An optional description
+- A system prompt (preconfigured instructions for the assistant)
+- One or more selected models
+
+### How to Use
+
+1. **Open Chat Settings**: Click the settings icon in the chat interface.
+2. **Go to the General Tab**: The "System Prompt Profiles" section appears at the top.
+3. **Create a Profile**: Click "New Profile", fill in the name, description, system prompt, and select one or more models. Click "Create".
+4. **Apply a Profile**: Click "Apply" on any saved profile to instantly update the system prompt and model selection.
+5. **Edit or Delete**: Use the "Edit" or "Delete" buttons to manage your profiles.
+
+### Persistence
+
+- Profiles are user-specific and stored in your browser's localStorage.
+- They persist across sessions and browser restarts.
+- Applying a profile updates the system prompt and model for new chats and messages.
+
+### Notes
+
+- Changes to the system prompt or model outside of profiles do not affect saved profiles.
+- You can always return to the profiles section to quickly switch between different configurations.
